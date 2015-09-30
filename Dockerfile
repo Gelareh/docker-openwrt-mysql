@@ -5,8 +5,18 @@ ADD image/root /
 ENV MYSQL_PWD root
 RUN opkg update && \
 mkdir -p /mnt/data/mysql/ && \
-opkg install mysql-server
-
+opkg install mysql-server && \
+#enable logging by creating files for logging and modifiying ect/my.cnf
+mkdir -p /var/log/mysql && \
+touch /var/log/mysql/mysql_error.log && \
+touch /var/log/mysql/mysql.log && \
+echo  $'[mysqld_safe]\n\
+log_error=/var/log/mysql/mysql_error.log\n\
+[mysqld]\n\
+log_error=/var/log/mysql/mysql_error.log\n\
+general_log_file    = /var/log/mysql/mysql.log\n\
+general_log          = 1\n'\
+>>  /etc/my.cnf
 # && \
 # mysql_install_db --force  && \
 # /etc/init.d/mysqld start  && \
