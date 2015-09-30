@@ -1,0 +1,6 @@
+#!/bin/bash
+mysql_install_db --force
+
+/usr/bin/mysqld --skip-grant
+
+# echo "Database created!"
