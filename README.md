@@ -11,7 +11,7 @@ Current status:
 ```  "/etc/init.d/mysqld: Error: I didn't detect a privileges table, you might need to run mysql_install_db --force to initialize the system tables"```
 
  
- * Run the docker and open the port 33070 for external connection:
+* Run the docker and open the port 33070 for external connection:
   
 	`docker run -p 33070:3306 --rm -it gelareh/docker-openwrt-mysql /bin/bash`
 
