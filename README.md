@@ -7,7 +7,7 @@ Current status:
    
  `docker build -t gelareh/docker-openwrt-mysql .`
 
- Note: An error wil occure but build is successfully done:
+ Note: An error will occur but build is successfully done:
 ```  "/etc/init.d/mysqld: Error: I didn't detect a privileges table, you might need to run mysql_install_db --force to initialize the system tables"```
 
  
